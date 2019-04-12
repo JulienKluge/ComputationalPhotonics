@@ -28,5 +28,31 @@
 
 # Executables
 *.exe
-*.out
 *.app
+
+# Data files
+*.csv
+
+# Latex auxiliary files
+**.acn
+**.asv
+**.aux
+**.bcf
+**.bbl
+**.blg
+**.glo
+**.gz
+**.ist
+**.lof
+**.lot
+**.log
+**.out
+**.xml
+**.toc
+**.sty
+
+# Intermediate Graphics
+*.eps
+
+# IDE/editor
+.vscode
