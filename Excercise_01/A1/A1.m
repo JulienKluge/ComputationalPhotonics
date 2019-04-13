@@ -20,6 +20,7 @@ x = -xMax:dx:xMax;
 y = arrayfun(gauss1D, x);
 figure(1)
 plot(x, y)
+saveas(gcf, 'A1_a.png');
 
 %% 1b
 gMax = 2;
@@ -36,6 +37,7 @@ subplot(2, 2, 3);
 pcolor(x, y, z)
 subplot(2, 2, 4);
 contour(x, y, z)
+saveas(gcf, 'A1_b.png');
 
 %% 1c
 gMax = 1;
@@ -53,6 +55,7 @@ subplot(1, 2, 1);
 quiver(x, y, xp1, yp1)
 subplot(1, 2, 2);
 quiver(x, y, xp2, yp2)
+saveas(gcf, 'A1_c.png');
 
 %% 1d
 dx = 0.01;
@@ -60,6 +63,7 @@ x = 0:dx:1;
 y = h(x);
 figure(4);
 plot(x, y)
+saveas(gcf, 'A1_d.png');
 int1 = integral(h, 0, 1);
 int2 = integral(h, eps, 1);
 h0 = h(0);
