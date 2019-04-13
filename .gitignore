@@ -30,6 +30,9 @@
 *.exe
 *.app
 
+# Zips
+*.zip
+
 # Data files
 *.csv
 
