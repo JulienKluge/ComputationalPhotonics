@@ -181,14 +181,15 @@ contour(x, y, z)
 		\begin{figure}[H]
 			\centering
 			\includegraphics[width=0.7\textwidth]{A2/data/Comparison.pdf}
-			\caption[]{Comparisons between different dft implementations.}
+			\caption[]{Comparisons between different dft implementations. The simple, recursive
+			Julia implementation is notably only 5 times slower than FFTW.}
 		\end{figure}
-		The fasted implementation seems to be matlabs fft. However, it is known
+		The fastest implementation seems to be matlabs fft. However, it is known
 		that matlab utilizes FFTW-plan implementations. The exact same speed could
 		be therefore in Julia be acquired with a single FFTW-plan allocation.\\
 		The naive implementations are fitted with a runtime slightly above
 		\(\mathcal{O}\left(N^2\right)\). All other implemntations are approximately
-		\(\approx\mathcal{O}\left(N^{1.1}\right)\) for the recursive implementation
+		\(\approx\mathcal{O}\left(N^{1.1}\right)\) for the simple, recursive implementation
 		and \(\mathcal{O}\left(N\log N\right)\) in the given uncertainty intervals.
 
 	\subsection*{d)}
@@ -260,7 +261,8 @@ contour(x, y, z)
 	\end{align}
 	Thus the final result in natural units (\(c=1\)) can be archived:
 	\begin{align}
-		\frac{\partial \widetilde{\mathbf{H}}(r_0\,\widetilde{\mathbf{r}},r_0\,\widetilde{t})}{\partial t}&=-\frac{1}{\mu(r_0\,\widetilde{\mathbf{r}})}\nabla\times\widetilde{\mathbf{E}}(r_0\,\widetilde{\mathbf{r}},r_0\,\widetilde{t})\\
-		\frac{\partial \widetilde{\mathbf{E}}(r_0\,\widetilde{\mathbf{r}},r_0\,\widetilde{t})}{\partial t}&=\frac{1}{\epsilon(r_0\,\widetilde{\mathbf{r}})}\nabla\times\widetilde{\mathbf{H}}(r_0\,\widetilde{\mathbf{r}},r_0\,\widetilde{t})
+		\frac{\partial \widetilde{\mathbf{H}}(r_0\,\widetilde{\mathbf{r}},r_0\,\widetilde{t})}{\partial \widetilde{t}}&=-\frac{1}{\mu(r_0\,\widetilde{\mathbf{r}})}\nabla_{\widetilde{r}}\times\widetilde{\mathbf{E}}(r_0\,\widetilde{\mathbf{r}},r_0\,\widetilde{t})\\
+		\frac{\partial \widetilde{\mathbf{E}}(r_0\,\widetilde{\mathbf{r}},r_0\,\widetilde{t})}{\partial \widetilde{t}}&=\frac{1}{\epsilon(r_0\,\widetilde{\mathbf{r}})}\nabla_{\widetilde{r}}\times\widetilde{\mathbf{H}}(r_0\,\widetilde{\mathbf{r}},r_0\,\widetilde{t})
 	\end{align}
+	Which also gives us the spatial discretization as \(r_0\).
 \end{document}
