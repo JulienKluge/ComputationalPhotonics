@@ -37,11 +37,9 @@ function main()
     # Benchmarking
     #
     benchmarkDFTFunction(fft, 1.0, 5, "FFTW.csv")
-    benchmarkDFTFunction(rfft, 1.0, 5, "RealFFTW.csv")
     benchmarkDFTFunction(simpleDFT, 1.0, 5, "simpleDFT.csv")
     benchmarkDFTFunction(naiveDFT, 1.0, 5, "naiveDFT.csv")
     benchmarkDFTFunction(naiveDFTIterative, 1.0, 5, "naiveDFTIter.csv")
-
 
     #
     # plotting

@@ -17,7 +17,7 @@ function naiveDFTIterative(hk::Array{T}) where T
 
     prefactor = -2 * π * im / N
 
-    for k = 1:N
+    @inbounds @simd for k = 1:N
         s = zero(Complex{T})
         km1 = k - 1
         for j = 1:N
